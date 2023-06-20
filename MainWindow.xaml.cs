@@ -32,7 +32,8 @@ namespace File_Analyzer
             {
                 string selectedFolder = folderBrowserDialog.SelectedPath;
 
-                GetDirectoryFilesViewModel getDirectoryFiles = new(selectedFolder);                
+                GetDirectoryFilesViewModel getDirectoryFiles = new(selectedFolder);
+                DataContext = getDirectoryFiles;
             }
         }       
         
