@@ -9,10 +9,10 @@
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="60"/>
-            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <Button x:Name="selectFolderButton" Content="Select Folder" Click="selectFolderButton_Click" Width="150" Height="50" />
-        <DataGrid ItemsSource="{Binding FileItems}" Grid.Row="1" Margin="5" Height="360"
-                  />
+        <DataGrid ItemsSource="{Binding FileItems}" Grid.Row="1" Margin="5"
+                  AlternatingRowBackground="LightBlue" />
     </Grid>
 </Window>

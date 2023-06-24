@@ -21,7 +21,7 @@ namespace File_Analyzer.ViewModels
                 FileName = fileInfo.Name,
                 FilePath = fileInfo.DirectoryName,
                 FileSize = fileInfo.Length
-            });        
+            }).OrderByDescending(x => x.FileSize);        
         }        
     }            
 }

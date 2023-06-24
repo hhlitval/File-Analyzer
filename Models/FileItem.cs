@@ -8,8 +8,13 @@ namespace File_Analyzer.Models
 {
     public class FileItem
     {
+        private double _fileSize;
         public string? FileName { get; set; }
         public string? FilePath { get; set; }
-        public double FileSize { get; set; }
+        public double FileSize 
+        {
+            get { return Math.Round(_fileSize / 1024 / 1024, 1); }
+            set { _fileSize = value; }
+        }
     }
 }
