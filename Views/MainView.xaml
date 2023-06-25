@@ -52,14 +52,16 @@
 
             <!-- Size Analyze Button -->
             <StackPanel Grid.Row="3" Grid.Column="0" Grid.RowSpan="2" Margin="20 50 20 0">
-                <Button Style="{StaticResource selectOptionButton}" Content="{icon:Material SortDescending, Height=20, Width=20}"/>
+                <Button Style="{StaticResource selectOptionButton}" Content="{icon:Material SortDescending, Height=20, Width=20}" 
+                        Click="SizeAnalyzeButton_Click"/>
                 <TextBlock Text="Size Analyze" FontSize="15" Foreground="#2d3142" 
                            HorizontalAlignment="Center" Margin="0 5"/>
             </StackPanel>
 
             <!-- Find Duplicates Button -->
             <StackPanel Grid.Row="3" Grid.Column="1" Grid.RowSpan="2" Margin="20 50 20 0">
-                <Button Style="{StaticResource selectOptionButton}" Content="{icon:Material ContentDuplicate, Height=20, Width=20}"
+                <Button Style="{StaticResource selectOptionButton}" Content="{icon:Material ContentDuplicate, Height=20, Width=20}" 
+                        Click="FindDuplicatesButton_Click"
                         />
                 <TextBlock Text="Find Duplicates" FontSize="15" Foreground="#2d3142" 
                            HorizontalAlignment="Center" Margin="0 5"/>
