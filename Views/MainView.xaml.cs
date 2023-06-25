@@ -37,8 +37,8 @@ namespace File_Analyzer.Views
 
         private void FindDuplicatesButton_Click(object sender, RoutedEventArgs e)
         {
-            DuplicateFilesView duplicateFiles = new();
-            duplicateFiles.ShowDialog();
+            DuplicateFilesView duplicateFilesView = new();
+            duplicateFilesView.ShowDialog();
         }
     }
 }
