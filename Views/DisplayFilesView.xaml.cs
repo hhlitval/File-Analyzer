@@ -1,4 +1,5 @@
-﻿using System;
+﻿using File_Analyzer.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,9 +20,13 @@ namespace File_Analyzer.Views
     /// </summary>
     public partial class DisplayFilesView : Window
     {
-        public DisplayFilesView()
+        public DisplayFilesView(string selectedFolder)
         {
             InitializeComponent();
+
+            GetDirectoryFilesViewModel getDirectoryFiles = new(selectedFolder);
+            DataContext = getDirectoryFiles;
         }
+
     }
 }

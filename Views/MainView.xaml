@@ -41,14 +41,15 @@
             <!-- Folder Path Textbox -->
             <Border Grid.Row="1" Grid.ColumnSpan="2" Margin="20 10" Background="#faf9f9"
                     CornerRadius="10" Opacity="0.95">
-                <TextBox Background="#faf9f9" Text="C:\" Margin="10"
+                <TextBox Background="#faf9f9" Margin="10"
                          BorderBrush="Transparent" VerticalContentAlignment="Center"
                          Foreground="Gray"/>
             </Border>
+                    <!--Text="{Binding ElementName=slider, Path=Value, Mode=TwoWay, StringFormat={}{0:F1}, UpdateSourceTrigger=Default}"/>-->
 
-            <!-- Select Folder Button -->
+                    <!-- Select Folder Button -->
             <Button Grid.Row="2" Grid.ColumnSpan="2" Content="Select Folder"
-                    Style="{StaticResource selectButton}"/>
+                    Style="{StaticResource selectButton}" Click="SelectFolderButton_Click"/>
 
             <!-- Size Analyze Button -->
             <StackPanel Grid.Row="3" Grid.Column="0" Grid.RowSpan="2" Margin="20 50 20 0">

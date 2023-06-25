@@ -19,27 +19,7 @@ namespace File_Analyzer
         public MainWindow()
         {
             InitializeComponent();
-            var win = new MainView();
-            win.ShowDialog();
-            
-        }
-
-        private void selectFolderButton_Click(object sender, RoutedEventArgs e)
-        {
-            var folderBrowserDialog = new FolderBrowserDialog();
-            folderBrowserDialog.Description = "Select the target folder";
-            // Optionally, set other properties like RootFolder, ShowNewFolderButton, etc.
-
-            DialogResult result = folderBrowserDialog.ShowDialog();
-
-            if (result == System.Windows.Forms.DialogResult.OK)
-            {
-                string selectedFolder = folderBrowserDialog.SelectedPath;
-
-                GetDirectoryFilesViewModel getDirectoryFiles = new(selectedFolder);
-                DataContext = getDirectoryFiles;
-            }
-        }       
-        
+            DataContext = new MainView().ShowDialog();            
+        }                     
     }
 } 
