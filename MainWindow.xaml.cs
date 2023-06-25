@@ -1,4 +1,5 @@
 ﻿using File_Analyzer.ViewModels;
+using File_Analyzer.Views;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -18,6 +19,9 @@ namespace File_Analyzer
         public MainWindow()
         {
             InitializeComponent();
+            var win = new MainView();
+            win.ShowDialog();
+            
         }
 
         private void selectFolderButton_Click(object sender, RoutedEventArgs e)
