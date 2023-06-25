@@ -28,5 +28,17 @@ namespace File_Analyzer.Views
         {
             Application.Current.Shutdown();
         }
+
+        private void SizeAnalyzeButton_Click(object sender, RoutedEventArgs e)
+        {
+            DisplayFilesView filesView = new();
+            filesView.ShowDialog();
+        }
+
+        private void FindDuplicatesButton_Click(object sender, RoutedEventArgs e)
+        {
+            DuplicateFilesView duplicateFiles = new();
+            duplicateFiles.ShowDialog();
+        }
     }
 }
