@@ -13,14 +13,14 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="Images\FileAnalyzer.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
+    <PackageReference Include="MahApps.Metro.IconPacks.Material" Version="4.11.0" />
+    <PackageReference Include="WindowsAPICodePack" Version="7.0.4" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="MahApps.Metro.IconPacks.Material" Version="4.11.0" />
-    <PackageReference Include="WindowsAPICodePack" Version="7.0.4" />
+    <Resource Include="Images\FileAnalyzer.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
 
 </Project>
