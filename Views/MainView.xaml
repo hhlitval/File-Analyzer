@@ -69,12 +69,12 @@
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
                                 <StackPanel Orientation="Horizontal">
-                                    <Button/>
-                                    <icon:PackIconMaterial Kind="Magnify"/>
-                                    <Button/>
-                                    <Button/>
-                                    <icon:PackIconMaterial Kind="Delete"/>
-                                    <Button/>
+                                    <Button Style="{StaticResource dataGridMagnifyButton}">
+                                        <icon:PackIconMaterial Kind="Magnify" Style="{StaticResource dataGridButtonIcon}"/>
+                                    </Button>
+                                    <Button Style="{StaticResource dataGridDeleteButton}" Margin="5 0 0 0">
+                                        <icon:PackIconMaterial Kind="DeleteOutline" Style="{StaticResource dataGridButtonIcon}"/>
+                                    </Button>
                                 </StackPanel>
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>

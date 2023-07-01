@@ -7,6 +7,7 @@
              xmlns:theme="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero2">
     
     <Application.Resources>
+        
         <Style x:Key="selectButton" TargetType="Button">
             <Setter Property="Background" Value="#01baef"/>
             <Setter Property="Foreground" Value="#ffffff"/>
@@ -29,7 +30,7 @@
             <Style.Triggers>
                 <Trigger Property="IsMouseOver" Value="True">
                     <Setter Property="Tag" Value="Visible" />
-                    <Setter Property="Background" Value="#1768ac"/>
+                    <Setter Property="Background" Value="#33caf5"/>
                     <Setter Property="Foreground" Value="#ffffff"/>
                 </Trigger>               
             </Style.Triggers>
@@ -96,7 +97,45 @@
             <Setter Property="VerticalAlignment" Value="Center" />
             <Setter Property="Foreground" Value="{Binding Path=Foreground, RelativeSource={RelativeSource FindAncestor,AncestorType={x:Type Button}}}" />
         </Style>
-        
+
+        <Style x:Key="dataGridMagnifyButton" TargetType="Button">
+            <Setter Property="Background" Value="#757575"/>
+            <Setter Property="BorderBrush" Value="#757575"/>
+            <Setter Property="Foreground" Value="#ffffff"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}" CornerRadius="5" Padding="3" BorderThickness="1" BorderBrush="{TemplateBinding BorderBrush}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#878787"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+        <Style x:Key="dataGridDeleteButton" TargetType="Button" BasedOn="{StaticResource dataGridMagnifyButton}">
+            <Setter Property="Background" Value="#d8315b"/>
+            <Setter Property="BorderBrush" Value="#d8315b"/>            
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#e84d74"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+        <Style x:Key="dataGridButtonIcon" TargetType="icon:PackIconMaterial">
+            <Setter Property="Width" Value="12"/>
+            <Setter Property="Height" Value="12"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+        </Style>
+
         <!--#region Data Grid -->
         <Style x:Key="{ComponentResourceKey ResourceId=DataGridSelectAllButtonStyle, TypeInTargetAssembly={x:Type DataGrid}}" TargetType="{x:Type Button}">
             <Setter Property="Template">
