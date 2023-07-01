@@ -33,9 +33,7 @@
                     <Setter Property="Foreground" Value="#000000"/>
                 </Trigger>               
             </Style.Triggers>
-        </Style>       
-        
-       
+        </Style>   
         
         <Style x:Key="selectOptionButton" TargetType="Button">
             <Setter Property="Background" Value="#b0d7ff"/>

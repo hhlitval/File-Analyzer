@@ -8,7 +8,8 @@
         mc:Ignorable="d"
         Height="600" Width="350" WindowStartupLocation="CenterScreen" 
         Background="Transparent" AllowsTransparency="True"
-        WindowStyle="None" ResizeMode="NoResize" FontFamily="Cambria">
+        WindowStyle="None" ResizeMode="NoResize" FontFamily="Dubai">
+    
     <Border CornerRadius="20" BorderBrush="#e1eefc" BorderThickness="2">
         <Border.Background>
             <ImageBrush Stretch="UniformToFill" ImageSource="\Images\FileAnalyzer.png"/>
@@ -35,13 +36,14 @@
                 </Button>
             </StackPanel>
             <!-- App Title -->
-            <TextBlock Grid.ColumnSpan="2" Foreground="White" FontSize="50" Margin="0 100 40 0"
-                       HorizontalAlignment="Right"><Run Text="File"/><LineBreak /><Run Text="Analyzer"/></TextBlock>
+            <TextBlock Grid.ColumnSpan="2" Foreground="White" FontSize="50" Margin="0 100 40 0"                       
+                       HorizontalAlignment="Right">File<LineBreak />Analyzer
+            </TextBlock>
 
             <!-- Folder Path Textbox -->
             <Border Grid.Row="1" Grid.ColumnSpan="2" Margin="20 10" Background="#faf9f9"
                     CornerRadius="10" Opacity="0.95">
-                <TextBox Background="#faf9f9" Margin="10"
+                <TextBox x:Name="pathTextBox" Background="#faf9f9" Margin="10"
                          BorderBrush="Transparent" VerticalContentAlignment="Center"
                          Foreground="Gray"/>
             </Border>

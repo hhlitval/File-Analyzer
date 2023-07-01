@@ -52,7 +52,7 @@ namespace File_Analyzer.Views
 
             if (result == System.Windows.Forms.DialogResult.OK)
             {
-                string selectedFolder = folderBrowserDialog.SelectedPath;
+                string selectedFolder = pathTextBox.Text = folderBrowserDialog.SelectedPath;
                 DisplayFilesView filesView = new(selectedFolder);
                 filesView.ShowDialog();
             }
