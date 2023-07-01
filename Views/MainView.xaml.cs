@@ -31,17 +31,6 @@ namespace File_Analyzer.Views
             System.Windows.Application.Current.Shutdown();
         }
 
-        private void SizeAnalyzeButton_Click(object sender, RoutedEventArgs e)
-        {
-            
-        }
-
-        private void FindDuplicatesButton_Click(object sender, RoutedEventArgs e)
-        {
-            DuplicateFilesView duplicateFilesView = new();
-            duplicateFilesView.ShowDialog();
-        }
-
         private void SelectFolderButton_Click(object sender, RoutedEventArgs e)
         {
             var folderBrowserDialog = new FolderBrowserDialog();
@@ -52,10 +41,11 @@ namespace File_Analyzer.Views
 
             if (result == System.Windows.Forms.DialogResult.OK)
             {
-                string selectedFolder = pathTextBox.Text = folderBrowserDialog.SelectedPath;
-                DisplayFilesView filesView = new(selectedFolder);
-                filesView.ShowDialog();
+                //string selectedFolder = pathTextBox.Text = folderBrowserDialog.SelectedPath;
+                string selectedFolder = folderBrowserDialog.SelectedPath;
+                GetDirectoryFilesViewModel getDirectoryFiles = new(selectedFolder);
+                DataContext = getDirectoryFiles;
             }
-        }
+        }        
     }
 }
