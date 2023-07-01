@@ -10,7 +10,7 @@
         Background="Transparent" AllowsTransparency="True"
         WindowStyle="None" ResizeMode="NoResize" FontFamily="Calibri">
 
-    <Border CornerRadius="20" BorderBrush="#e1eefc" BorderThickness="2" Background="#e3f2fd">
+    <Border CornerRadius="20" BorderBrush="#e1eefc" BorderThickness="2" Background="#fbfbff">
         <!--<Border.Background>
             <ImageBrush Stretch="UniformToFill" ImageSource="\Images\FileAnalyzer.png"/>
         </Border.Background>-->
@@ -26,7 +26,12 @@
             </Grid.RowDefinitions>
 
             <!-- App's Head Section -->
-            <Border Grid.Row="0" Grid.ColumnSpan="2" Background="#2b2d42" CornerRadius="20 20 0 0"/>
+            <!-- Background="#31393c" -->
+            <Border Grid.Row="0" Grid.ColumnSpan="2" CornerRadius="20 20 0 0">
+                <Border.Background>
+                    <ImageBrush Stretch="UniformToFill" ImageSource="\Images\FileAnalyzer.png"/>
+                </Border.Background>
+            </Border>
             <TextBlock Text="File Analyzer" VerticalAlignment="Center" FontSize="24" Foreground="#e3f2fd"
                        FontFamily="Copperplate Gothic Bold" Margin="15 0 0 0"/>
 
