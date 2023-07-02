@@ -11,11 +11,12 @@
         <Style x:Key="selectButton" TargetType="Button">
             <Setter Property="Background" Value="#01baef"/>
             <Setter Property="Foreground" Value="#ffffff"/>
-            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="FontSize" Value="18"/>
             <Setter Property="Margin" Value="0 0 15 0"/>
-            <Setter Property="Height" Value="50"/>
-            <Setter Property="Width" Value="250"/>
+            <Setter Property="Height" Value="40"/>
+            <Setter Property="Width" Value="150"/>
             <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+            <Setter Property="HorizontalAlignment" Value="Right"/>
             <Setter Property="BorderThickness" Value="0"/>
             <Setter Property="Template">
                 <Setter.Value>
@@ -275,7 +276,7 @@
             </Setter>
         </Style>
         <Style x:Key="DataGridRowStyle1" TargetType="{x:Type DataGridRow}">
-            <Setter Property="Background" Value="#bdd5ea"/>
+            <Setter Property="Background" Value="#f8f9fa"/>
             <Setter Property="Margin" Value="0 4 0 0"/>
             <Setter Property="SnapsToDevicePixels" Value="true"/>
             <Setter Property="Validation.ErrorTemplate" Value="{x:Null}"/>

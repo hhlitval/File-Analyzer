@@ -45,9 +45,9 @@
             </StackPanel>
 
             <!-- Select Folder Button -->
-            <Button Grid.Row="1" Grid.Column="1" Width="200" Content="Select Folder" HorizontalAlignment="Right"
+            <Button Grid.Row="1" Grid.Column="1" Content="Select Folder"
                     Style="{StaticResource selectButton}"
-                    Foreground="#fafafa" Click="SelectFolderButton_Click"/>
+                    Click="SelectFolderButton_Click"/>
 
             <!-- Data Grid -->
             <DataGrid Grid.Row="2" ItemsSource="{Binding FileItems}" 
@@ -58,14 +58,15 @@
                        >
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="#" IsReadOnly="True" CanUserResize="False" Width="Auto"/>
-                    <DataGridTextColumn Header="Filename" IsReadOnly="True" CanUserResize="False" Width="*" 
+                    <DataGridTextColumn Header="Filename" IsReadOnly="True" CanUserResize="True" Width="*" 
                                         Binding="{Binding FileName}"/>
-                    <DataGridTextColumn Header="Path" IsReadOnly="True" CanUserResize="False" Width="*"
-                                        Binding="{Binding FilePath}"/>
-                    <DataGridTextColumn Header="Size" IsReadOnly="True" CanUserResize="False" Width="*"
+                    <DataGridTextColumn Header="Size" IsReadOnly="True" CanUserResize="True" Width="100"
                                         Binding="{Binding FileSize}"/>
+                    <DataGridTextColumn Header="Path" IsReadOnly="True" CanUserResize="True" Width="*"
+                                        Binding="{Binding FilePath}"/>                  
 
                     <DataGridTemplateColumn Header="" IsReadOnly="True" Width="Auto">
+                        
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
                                 <StackPanel Orientation="Horizontal">
