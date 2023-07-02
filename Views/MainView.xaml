@@ -39,6 +39,9 @@
                 <Button Style="{StaticResource topMenuButton}">
                     <icon:PackIconMaterial Kind="WindowMinimize" Style="{StaticResource topMenuIcon}"/>
                 </Button>
+                <Button Style="{StaticResource topMenuButton}">
+                    <icon:PackIconMaterial Kind="WindowMaximize" Style="{StaticResource topMenuIcon}"/>
+                </Button>
                 <Button Style="{StaticResource topMenuButton}" Click="CloseButton_Click" >
                     <icon:PackIconMaterial Kind="Close" Style="{StaticResource topMenuIcon}"/>
                 </Button>
@@ -51,13 +54,12 @@
 
             <!-- Data Grid -->
             <DataGrid Grid.Row="2" ItemsSource="{Binding FileItems}" 
-                      Grid.ColumnSpan="2" Margin="15"
+                      Grid.ColumnSpan="2" Margin="15 0 15 15"
                       CellStyle="{DynamicResource DataGridCellStyle1}" Style="{DynamicResource DataGridStyle1}" 
                       ColumnHeaderStyle="{DynamicResource DataGridColumnHeaderStyle1}" 
                       RowStyle="{DynamicResource DataGridRowStyle1}"
                        >
                 <DataGrid.Columns>
-                    <DataGridTextColumn Header="#" IsReadOnly="True" CanUserResize="False" Width="Auto"/>
                     <DataGridTextColumn Header="Filename" IsReadOnly="True" CanUserResize="True" Width="*" 
                                         Binding="{Binding FileName}"/>
                     <DataGridTextColumn Header="Size" IsReadOnly="True" CanUserResize="True" Width="100"
