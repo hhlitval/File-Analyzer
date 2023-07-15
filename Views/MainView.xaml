@@ -5,10 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:File_Analyzer.Views"
         xmlns:icon="http://metro.mahapps.com/winfx/xaml/iconpacks"
+        xmlns:lvc="clr-namespace:LiveChartsCore.SkiaSharpView.WPF;assembly=LiveChartsCore.SkiaSharpView.WPF"
         mc:Ignorable="d"
         Height="800" Width="1200" WindowStartupLocation="CenterScreen" 
         Background="Transparent" AllowsTransparency="True"
-        WindowStyle="None" ResizeMode="NoResize" FontFamily="Calibri">
+        WindowStyle="None" ResizeMode="NoResize" FontFamily="Dubai">
 
     <Border CornerRadius="20" BorderBrush="#e1eefc" BorderThickness="2" Background="#fbfbff">
         <!--<Border.Background>
@@ -93,9 +94,9 @@
                     <RowDefinition Height="50"/>
                     <RowDefinition/>
                 </Grid.RowDefinitions>
-                <TextBlock Text="Files" FontSize="20" FontWeight="SemiBold"/>
-
-                <TextBlock Grid.Row="2" Text="Duplicates" FontSize="20" FontWeight="SemiBold"/>
+                <TextBlock Text="Files" FontSize="18" FontWeight="Medium" Foreground="#69717d"/>
+                <lvc:PieChart Grid.Row="1" Series="{Binding Series}" Margin="10"/>
+                <TextBlock Grid.Row="2" Text="Duplicates" FontSize="18" FontWeight="Medium" Foreground="#69717d"/>
             </Grid>
         </Grid>
     </Border>

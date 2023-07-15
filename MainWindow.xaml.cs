@@ -1,5 +1,7 @@
 ﻿using File_Analyzer.ViewModels;
 using File_Analyzer.Views;
+using LiveChartsCore.SkiaSharpView;
+using LiveChartsCore;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -19,7 +21,7 @@ namespace File_Analyzer
         public MainWindow()
         {
             InitializeComponent();
-            DataContext = new MainView().ShowDialog();            
-        }                     
+            DataContext = new MainView().ShowDialog();  
+        }        
     }
 } 

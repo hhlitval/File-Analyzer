@@ -1,4 +1,6 @@
 ﻿using File_Analyzer.ViewModels;
+using LiveChartsCore.SkiaSharpView;
+using LiveChartsCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -45,7 +47,7 @@ namespace File_Analyzer.Views
                 string selectedFolder = folderBrowserDialog.SelectedPath;
                 GetDirectoryFilesViewModel getDirectoryFiles = new(selectedFolder);
                 DataContext = getDirectoryFiles;
-            }
+            }            
         }        
     }
 }

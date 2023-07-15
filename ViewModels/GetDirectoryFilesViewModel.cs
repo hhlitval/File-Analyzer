@@ -6,6 +6,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using File_Analyzer.Models;
+using LiveChartsCore.SkiaSharpView;
+using LiveChartsCore;
 
 namespace File_Analyzer.ViewModels
 {
@@ -13,6 +15,15 @@ namespace File_Analyzer.ViewModels
     {
         private const string LogFilePath = "log.txt";
         public IEnumerable<FileItem>? FileItems { get; set; }
+
+        public ISeries[] Series { get; set; } = new ISeries[]
+            {
+            new PieSeries<double> { Values = new List<double> { 2 }, InnerRadius = 50 },
+            new PieSeries<double> { Values = new List<double> { 4 }, InnerRadius = 50 },
+            new PieSeries<double> { Values = new List<double> { 1 }, InnerRadius = 50 },
+            new PieSeries<double> { Values = new List<double> { 4 }, InnerRadius = 50 },
+            new PieSeries<double> { Values = new List<double> { 3 }, InnerRadius = 50 }
+                };
 
         public GetDirectoryFilesViewModel(string folderPath)
         {
@@ -26,10 +37,10 @@ namespace File_Analyzer.ViewModels
             }).OrderByDescending(x => x.FileSize);        
         }
 
-        private void LogExceptionToFile(Exception ex, string filePath = "")
-        {
-            string logMessage = $"[{DateTime.Now}] Exception: {ex.Message}\nFilePath: {filePath}\nStackTrace: {ex.StackTrace}\n";
-            File.AppendAllText(LogFilePath, logMessage);
-        }
+        //private void LogExceptionToFile(Exception ex, string filePath = "")
+        //{
+        //    string logMessage = $"[{DateTime.Now}] Exception: {ex.Message}\nFilePath: {filePath}\nStackTrace: {ex.StackTrace}\n";
+        //    File.AppendAllText(LogFilePath, logMessage);
+        //}        
     }            
 }
