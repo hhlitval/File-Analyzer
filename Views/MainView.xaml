@@ -16,7 +16,7 @@
         </Border.Background>-->
         <Grid>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
+                <ColumnDefinition Width="2*"/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
@@ -54,7 +54,7 @@
 
             <!-- Data Grid -->
             <DataGrid Grid.Row="2" ItemsSource="{Binding FileItems}" 
-                      Grid.ColumnSpan="2" Margin="15 0 15 15"
+                      Margin="15 0 15 15"
                       CellStyle="{DynamicResource DataGridCellStyle1}" Style="{DynamicResource DataGridStyle1}" 
                       ColumnHeaderStyle="{DynamicResource DataGridColumnHeaderStyle1}" 
                       RowStyle="{DynamicResource DataGridRowStyle1}"
@@ -84,6 +84,19 @@
                     </DataGridTemplateColumn>
                 </DataGrid.Columns>
             </DataGrid>
+            
+            <!-- PieChart Files -->
+            <Grid Grid.Row="2" Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition/>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <TextBlock Text="Files" FontSize="20" FontWeight="SemiBold"/>
+
+                <TextBlock Grid.Row="2" Text="Duplicates" FontSize="20" FontWeight="SemiBold"/>
+            </Grid>
         </Grid>
     </Border>
 </Window>
