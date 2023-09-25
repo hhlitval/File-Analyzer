@@ -64,7 +64,7 @@
                     <DataGridTextColumn Header="Filename" IsReadOnly="True" CanUserResize="True" Width="*" 
                                         Binding="{Binding FileName}"/>
                     <DataGridTextColumn Header="Size" IsReadOnly="True" CanUserResize="True" Width="100"
-                                        Binding="{Binding FileSize}"/>
+                                        Binding="{Binding FileSize, StringFormat={}{0} MB}"/>
                     <DataGridTextColumn Header="Path" IsReadOnly="True" CanUserResize="True" Width="*"
                                         Binding="{Binding FilePath}"/>                  
 
@@ -94,9 +94,11 @@
                     <RowDefinition Height="50"/>
                     <RowDefinition/>
                 </Grid.RowDefinitions>
-                <TextBlock Text="Files" FontSize="18" FontWeight="Medium" Foreground="#69717d"/>
-                <lvc:PieChart Grid.Row="1" Series="{Binding Series}" Margin="10"/>
-                <TextBlock Grid.Row="2" Text="Duplicates" FontSize="18" FontWeight="Medium" Foreground="#69717d"/>
+                <TextBlock Text="Files" FontSize="18" FontWeight="Normal" Foreground="#69717d"/>
+                <lvc:PieChart Grid.Row="1" Series="{Binding Series}" Margin="10" LegendPosition="Right"/>
+                <TextBlock Grid.Row="2" Text="Duplicates" FontSize="18" FontWeight="Normal" Foreground="#69717d"/>
+                <TextBlock Grid.Row="3" Text="No duplicate files has been found" FontSize="18" HorizontalAlignment="Center"
+                           VerticalAlignment="Center"/>
             </Grid>
         </Grid>
     </Border>
