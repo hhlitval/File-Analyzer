@@ -18,9 +18,9 @@ namespace File_Analyzer.ViewModels
 
         public ISeries[] Series { get; set; } = new ISeries[]
             {
-            new PieSeries<double> { Values = new List<double> { 2 }, InnerRadius = 50, Name = "Excel files", Pushout = 2, HoverPushout = 5},
+            new PieSeries<double> { Values = new List<double> { 2 }, InnerRadius = 50, Name = "Video files", Pushout = 2, HoverPushout = 5},
             new PieSeries<double> { Values = new List<double> { 4 }, InnerRadius = 50, Name = "Images", Pushout = 2, HoverPushout = 5},
-            new PieSeries<double> { Values = new List<double> { 1 }, InnerRadius = 50, Name = "Word files", Pushout = 2, HoverPushout = 5},
+            new PieSeries<double> { Values = new List<double> { 1 }, InnerRadius = 50, Name = "Office files", Pushout = 2, HoverPushout = 5},
             new PieSeries<double> { Values = new List<double> { 4 }, InnerRadius = 50, Name = "PDF files", Pushout = 2, HoverPushout = 5},
             new PieSeries<double> { Values = new List<double> { 3 }, InnerRadius = 50, Name = "Audio files", Pushout = 2, HoverPushout = 5}
                 };

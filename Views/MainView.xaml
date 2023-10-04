@@ -11,7 +11,7 @@
         Background="Transparent" AllowsTransparency="True"
         WindowStyle="None" ResizeMode="NoResize" FontFamily="Dubai">
 
-    <Border CornerRadius="20" BorderBrush="#e1eefc" BorderThickness="2" Background="#fbfbff">
+    <Border CornerRadius="20" BorderBrush="#e1eefc" BorderThickness="2" Background="#fbfbff" MouseDown="Border_MouseDown">
         <!--<Border.Background>
             <ImageBrush Stretch="UniformToFill" ImageSource="\Images\FileAnalyzer.png"/>
         </Border.Background>-->
@@ -94,11 +94,11 @@
                     <RowDefinition Height="50"/>
                     <RowDefinition/>
                 </Grid.RowDefinitions>
-                <TextBlock Text="Files" FontSize="18" FontWeight="Normal" Foreground="#69717d"/>
+                <TextBlock Text="File Types" FontSize="18" FontWeight="Normal" Foreground="#69717d"/>
                 <lvc:PieChart Grid.Row="1" Series="{Binding Series}" Margin="10" LegendPosition="Right"/>
                 <TextBlock Grid.Row="2" Text="Duplicates" FontSize="18" FontWeight="Normal" Foreground="#69717d"/>
                 <TextBlock Grid.Row="3" Text="No duplicate files has been found" FontSize="18" HorizontalAlignment="Center"
-                           VerticalAlignment="Center"/>
+                           VerticalAlignment="Center" Foreground="#69717d"/>
             </Grid>
         </Grid>
     </Border>
