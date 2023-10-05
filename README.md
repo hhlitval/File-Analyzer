@@ -1,2 +1,2 @@
 # File Analyzer 
-This project is currently under construction 
+This project is currently in development
