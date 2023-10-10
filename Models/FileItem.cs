@@ -11,10 +11,11 @@ namespace File_Analyzer.Models
         private double _fileSize;
         public string? FileName { get; set; }
         public string? FilePath { get; set; }
+
         public double FileSize 
         {
             get { return Math.Round(_fileSize / 1024 / 1024, 1); }
             set { _fileSize = value; }
-        }
+        }  
     }
 }

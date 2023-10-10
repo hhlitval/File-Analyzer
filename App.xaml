@@ -8,21 +8,21 @@
     
     <Application.Resources>
         
-        <Style x:Key="selectButton" TargetType="Button">
-            <Setter Property="Background" Value="#01baef"/>
-            <Setter Property="Foreground" Value="#ffffff"/>
+        <Style x:Key="selectButton" TargetType="ToggleButton">
+            <Setter Property="Background" Value="#bfcde0"/>
+            <Setter Property="Foreground" Value="#3B3355"/>
             <Setter Property="FontSize" Value="18"/>
-            <Setter Property="Margin" Value="0 0 15 0"/>
+            <Setter Property="Margin" Value="10 5 10 5"/>
             <Setter Property="Height" Value="40"/>
-            <Setter Property="Width" Value="130"/>
+            <Setter Property="Width" Value="150"/>
             <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
-            <Setter Property="HorizontalAlignment" Value="Right"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
             <Setter Property="BorderThickness" Value="0"/>
             <Setter Property="Template">
                 <Setter.Value>
-                    <ControlTemplate TargetType="Button">
-                        <Border Background="{TemplateBinding Background}" BorderBrush="#1e2e44" BorderThickness="0" CornerRadius="15">
-                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    <ControlTemplate TargetType="ToggleButton">
+                        <Border Background="{TemplateBinding Background}" CornerRadius="10">
+                            <ContentPresenter HorizontalAlignment="Left" VerticalAlignment="Center"/>
                         </Border>
                     </ControlTemplate>
                 </Setter.Value>
@@ -31,10 +31,16 @@
             <Style.Triggers>
                 <Trigger Property="IsMouseOver" Value="True">
                     <Setter Property="Tag" Value="Visible" />
-                    <Setter Property="Background" Value="#33caf5"/>
-                    <Setter Property="Foreground" Value="#ffffff"/>
-                </Trigger>               
-            </Style.Triggers>
+                    <Setter Property="Background" Value="#5d5d81"/>
+                    <Setter Property="Foreground" Value="#fefcfd"/>
+                </Trigger>
+
+                <Trigger Property="IsChecked" Value="True">
+                    <Setter Property="Tag" Value="Visible" />
+                    <Setter Property="Background" Value="#5d5d81"/>
+                    <Setter Property="Foreground" Value="#fefcfd"/>
+                </Trigger>
+            </Style.Triggers>            
         </Style>   
         
         <Style x:Key="selectOptionButton" TargetType="Button">
@@ -67,7 +73,7 @@
 
         <Style x:Key="topMenuButton" TargetType="Button">
             <Setter Property="Background" Value="Transparent"/>
-            <Setter Property="Foreground" Value="#ffffff"/>
+            <Setter Property="Foreground" Value="#3B3355"/>
             <Setter Property="Height" Value="30"/>
             <Setter Property="Width" Value="30"/>
             <Setter Property="Margin" Value="5"/>
@@ -85,8 +91,8 @@
             <Style.Triggers>
                 <Trigger Property="IsMouseOver" Value="True">
                     <Setter Property="Tag" Value="Visible" />
-                    <Setter Property="Background" Value="#484b6b"/>
-                    <Setter Property="Foreground" Value="#ffffff"/>
+                    <Setter Property="Background" Value="#5D5D81"/>
+                    <Setter Property="Foreground" Value="#FEFCFD"/>
                 </Trigger>
             </Style.Triggers>
         </Style>
@@ -276,7 +282,7 @@
             </Setter>
         </Style>
         <Style x:Key="DataGridRowStyle1" TargetType="{x:Type DataGridRow}">
-            <Setter Property="Background" Value="#f2fcff"/>
+            <Setter Property="Background" Value="#ffffff"/>
             <Setter Property="Margin" Value="0 4 0 0"/>
             <Setter Property="SnapsToDevicePixels" Value="true"/>
             <Setter Property="Validation.ErrorTemplate" Value="{x:Null}"/>
@@ -311,12 +317,12 @@
             
             <Style.Triggers>
                 <Trigger Property="IsMouseOver" Value="True">
-                    <Setter Property="Background" Value="#0b4f6c"/>
+                    <Setter Property="Background" Value="#5D5D81"/>
                     <Setter Property="Foreground" Value="#ffffff"/>
                 </Trigger>
 
                 <Trigger Property="IsSelected" Value="True">
-                    <Setter Property="Background" Value="#20bf55"/>
+                    <Setter Property="Background" Value="#3B3355"/>
                     <Setter Property="Foreground" Value="#ffffff"/>
                 </Trigger>                
             </Style.Triggers>

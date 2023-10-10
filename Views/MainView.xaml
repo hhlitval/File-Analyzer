@@ -7,16 +7,15 @@
         xmlns:icon="http://metro.mahapps.com/winfx/xaml/iconpacks"
         xmlns:lvc="clr-namespace:LiveChartsCore.SkiaSharpView.WPF;assembly=LiveChartsCore.SkiaSharpView.WPF"
         mc:Ignorable="d"
-        Height="800" Width="1200" WindowStartupLocation="CenterScreen" 
+        Height="700" Width="1100" WindowStartupLocation="CenterScreen" 
         Background="Transparent" AllowsTransparency="True"
         WindowStyle="None" ResizeMode="NoResize" FontFamily="Dubai">
 
-    <Border CornerRadius="20" BorderBrush="#e1eefc" BorderThickness="2" Background="#fbfbff" MouseDown="Border_MouseDown">
-        <!--<Border.Background>
-            <ImageBrush Stretch="UniformToFill" ImageSource="\Images\FileAnalyzer.png"/>
-        </Border.Background>-->
+    <Border CornerRadius="15" Background="#ffffff" MouseDown="Border_MouseDown">
+        
         <Grid>
             <Grid.ColumnDefinitions>
+                <ColumnDefinition Width ="175"/>
                 <ColumnDefinition Width="2*"/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
@@ -28,13 +27,13 @@
 
             <!-- App's Head Section -->
             <!-- Background="#31393c" -->
-            <Border Grid.Row="0" Grid.ColumnSpan="2" CornerRadius="20 20 0 0">
-                <Border.Background>
-                    <ImageBrush Stretch="UniformToFill" ImageSource="\Images\FileAnalyzer.png"/>
-                </Border.Background>
-            </Border>            
+            <Border Grid.Row="0" Grid.RowSpan="3" Margin="5 5 0 5" CornerRadius="15" 
+                    Background="#bfcde0"/>
+            <Border CornerRadius="15" Margin="5" Grid.Column="1" Grid.ColumnSpan="2" Grid.RowSpan="3" 
+                    Background="#fefcfd"/>
 
-            <StackPanel Grid.Column="1" HorizontalAlignment="Right" Margin="0 0 10 0" Orientation="Horizontal" VerticalAlignment="Center">
+
+            <StackPanel Grid.Column="2" HorizontalAlignment="Right" Margin="0 0 10 0" Orientation="Horizontal" VerticalAlignment="Center">
                 <Button Style="{StaticResource topMenuButton}">
                     <icon:PackIconMaterial Kind="WindowMinimize" Style="{StaticResource topMenuIcon}"/>
                 </Button>
@@ -45,14 +44,63 @@
                     <icon:PackIconMaterial Kind="Close" Style="{StaticResource topMenuIcon}"/>
                 </Button>
             </StackPanel>
-
-            <!-- Select Folder Button -->
-            <Button Grid.Row="1" Grid.Column="1" Content="Select Folder"
-                    Style="{StaticResource selectButton}"
-                    Click="SelectFolderButton_Click"/>
+            
+            <!-- Logo -->
+            <TextBlock Grid.Row="0" Grid.RowSpan="2" Grid.Column="0"
+                       Text="File Analyzer" TextWrapping="Wrap" HorizontalAlignment="Center"
+                       VerticalAlignment="Center"
+                       FontSize="30"
+                       Margin="10"
+                       TextAlignment="Center"
+                       Foreground="#3B3355"
+                       FontFamily="Berlin Sans FB"/>
+            <!-- Menu Panel  -->
+            <StackPanel Grid.Row="2" Grid.Column="0" Orientation="Vertical">
+               
+                <ToggleButton Style="{StaticResource selectButton}"
+                              Click="SelectFolderButton_Click">
+                    <Grid>
+                        <StackPanel Orientation="Horizontal">
+                            <icon:PackIconMaterial Kind="PlusCircleOutline" 
+                                                   VerticalAlignment="Center"
+                                                   Margin="10 5"/>
+                            <TextBlock Text="Select Folder" 
+                                       VerticalAlignment="Center"/>
+                        </StackPanel>
+                    </Grid>
+                </ToggleButton>
+                <TextBlock Text="Favorite folders" 
+                           Margin="25 20 0 0"
+                           Foreground="#5D5D81"
+                           FontSize="15"/>
+                <ToggleButton Style="{StaticResource selectButton}">
+                    <Grid>
+                        <StackPanel Orientation="Horizontal">
+                            <icon:PackIconMaterial Kind="Download" 
+                                   VerticalAlignment="Center"
+                                   Margin="10 5"/>
+                            <TextBlock 
+                                Text="Downloads" 
+                                VerticalAlignment="Center"/>
+                        </StackPanel>
+                    </Grid>
+                </ToggleButton>
+                <ToggleButton Style="{StaticResource selectButton}">
+                    <Grid>
+                        <StackPanel Orientation="Horizontal">
+                            <icon:PackIconMaterial Kind="DesktopClassic" 
+                               VerticalAlignment="Center"
+                               Margin="10 5"/> 
+                            <TextBlock 
+                                Text="Desktop" 
+                                VerticalAlignment="Center"/>    
+                        </StackPanel>
+                    </Grid>
+                </ToggleButton>
+            </StackPanel>
 
             <!-- Data Grid -->
-            <DataGrid Grid.Row="2" ItemsSource="{Binding FileItems}" 
+            <DataGrid Grid.Row="2" Grid.Column="1" ItemsSource="{Binding FileItems}" 
                       Margin="15 0 15 15"
                       CellStyle="{DynamicResource DataGridCellStyle1}" Style="{DynamicResource DataGridStyle1}" 
                       ColumnHeaderStyle="{DynamicResource DataGridColumnHeaderStyle1}" 
@@ -85,7 +133,7 @@
             </DataGrid>
             
             <!-- PieChart Files -->
-            <Grid Grid.Row="2" Grid.Column="1">
+            <Grid Grid.Row="2" Grid.Column="2">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="50"/>
                     <RowDefinition/>
