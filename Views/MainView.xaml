@@ -7,11 +7,11 @@
         xmlns:icon="http://metro.mahapps.com/winfx/xaml/iconpacks"
         xmlns:lvc="clr-namespace:LiveChartsCore.SkiaSharpView.WPF;assembly=LiveChartsCore.SkiaSharpView.WPF"
         mc:Ignorable="d"
-        Height="700" Width="1100" WindowStartupLocation="CenterScreen" 
+        Height="700" Width="1200" WindowStartupLocation="CenterScreen" 
         Background="Transparent" AllowsTransparency="True"
         WindowStyle="None" ResizeMode="NoResize" FontFamily="Dubai">
 
-    <Border CornerRadius="15" Background="#ffffff" MouseDown="Border_MouseDown">
+    <Border CornerRadius="15" Background="#ffffff" BorderBrush="#BFCDE0" BorderThickness="1" MouseDown="Border_MouseDown">
         
         <Grid>
             <Grid.ColumnDefinitions>
@@ -25,7 +25,7 @@
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
 
-            <!-- App's Head Section -->
+            <!-- Window control section -->
             <!-- Background="#31393c" -->
             <Border Grid.Row="0" Grid.RowSpan="3" Margin="5 5 0 5" CornerRadius="15" 
                     Background="#bfcde0"/>
@@ -33,7 +33,7 @@
                     Background="#fefcfd"/>
 
 
-            <StackPanel Grid.Column="2" HorizontalAlignment="Right" Margin="0 0 10 0" Orientation="Horizontal" VerticalAlignment="Center">
+            <StackPanel Grid.Column="2" HorizontalAlignment="Right" Margin="0 0 5 0" Orientation="Horizontal" VerticalAlignment="Top">
                 <Button Style="{StaticResource topMenuButton}">
                     <icon:PackIconMaterial Kind="WindowMinimize" Style="{StaticResource topMenuIcon}"/>
                 </Button>
@@ -45,7 +45,7 @@
                 </Button>
             </StackPanel>
             
-            <!-- Logo -->
+            <!-- Title -->
             <TextBlock Grid.Row="0" Grid.RowSpan="2" Grid.Column="0"
                        Text="File Analyzer" TextWrapping="Wrap" HorizontalAlignment="Center"
                        VerticalAlignment="Center"
@@ -54,10 +54,12 @@
                        TextAlignment="Center"
                        Foreground="#3B3355"
                        FontFamily="Berlin Sans FB"/>
-            <!-- Menu Panel  -->
+            
+            <!-- Side Menu Panel  -->
             <StackPanel Grid.Row="2" Grid.Column="0" Orientation="Vertical">
                
                 <ToggleButton Style="{StaticResource selectButton}"
+                              Background="#000505" Foreground="#fefcfd"
                               Click="SelectFolderButton_Click">
                     <Grid>
                         <StackPanel Orientation="Horizontal">
@@ -94,6 +96,46 @@
                             <TextBlock 
                                 Text="Desktop" 
                                 VerticalAlignment="Center"/>    
+                        </StackPanel>
+                    </Grid>
+                </ToggleButton>
+                <ToggleButton Style="{StaticResource selectButton}">
+                    <Grid>
+                        <StackPanel Orientation="Horizontal">
+                            <icon:PackIconMaterial Kind="FileDocument" 
+                VerticalAlignment="Center"
+                Margin="10 5"/>
+                            <TextBlock 
+                 Text="Documents" 
+                 VerticalAlignment="Center"/>
+                        </StackPanel>
+                    </Grid>
+                </ToggleButton>
+                <TextBlock Text="Find files" 
+                           Margin="25 20 0 0"
+                           Foreground="#5D5D81"
+                           FontSize="15"/>
+                <ToggleButton Style="{StaticResource selectButton}">
+                    <Grid>
+                        <StackPanel Orientation="Horizontal">
+                            <icon:PackIconMaterial Kind="ContentDuplicate" 
+                                                   VerticalAlignment="Center"
+                                                   Margin="10 5"/>
+                            <TextBlock 
+                                Text="Duplicate files" 
+                                VerticalAlignment="Center"/>
+                        </StackPanel>
+                    </Grid>
+                </ToggleButton>
+                <ToggleButton Style="{StaticResource selectButton}">
+                    <Grid>
+                        <StackPanel Orientation="Horizontal">
+                            <icon:PackIconMaterial Kind="FileAlert" 
+               VerticalAlignment="Center"
+               Margin="10 5"/>
+                            <TextBlock 
+                Text="Top 50 files" 
+                VerticalAlignment="Center"/>
                         </StackPanel>
                     </Grid>
                 </ToggleButton>
@@ -142,9 +184,7 @@
                 </Grid.RowDefinitions>
                 <TextBlock Text="File Types" FontSize="18" FontWeight="Normal" Foreground="#69717d"/>
                 <lvc:PieChart Grid.Row="1" Series="{Binding Series}" Margin="10" LegendPosition="Right"/>
-                <TextBlock Grid.Row="2" Text="Duplicate Files" FontSize="18" FontWeight="Normal" Foreground="#69717d"/>
-                <TextBlock Grid.Row="3" Text="No duplicate files has been found" FontSize="18" HorizontalAlignment="Center"
-                           VerticalAlignment="Center" Foreground="#69717d"/>
+                
             </Grid>
         </Grid>
     </Border>

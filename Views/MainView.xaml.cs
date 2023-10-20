@@ -53,7 +53,7 @@ namespace File_Analyzer.Views
             {
                 //string selectedFolder = pathTextBox.Text = folderBrowserDialog.SelectedPath;
                 string selectedFolder = folderBrowserDialog.SelectedPath;
-                GetDirectoryFilesViewModel getDirectoryFiles = new(selectedFolder);
+                SelectedFolderViewModel getDirectoryFiles = new(selectedFolder);
                 DataContext = getDirectoryFiles;
             }            
         }        

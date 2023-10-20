@@ -11,7 +11,7 @@ using LiveChartsCore;
 
 namespace File_Analyzer.ViewModels
 {
-    public class GetDirectoryFilesViewModel : BaseViewModel
+    public class SelectedFolderViewModel : BaseViewModel
     {
         private const string LogFilePath = "log.txt";
         public IEnumerable<FileItem>? FileItems { get; set; }
@@ -25,7 +25,7 @@ namespace File_Analyzer.ViewModels
             new PieSeries<double> { Values = new List<double> { 3 }, InnerRadius = 50, Name = "Audio files", Pushout = 2, HoverPushout = 5}
                 };
 
-        public GetDirectoryFilesViewModel(string folderPath)
+        public SelectedFolderViewModel(string folderPath)
         {
             DirectoryInfo dir = new DirectoryInfo(folderPath);
             IEnumerable<FileInfo> fileList = dir.EnumerateFiles("*.*", new EnumerationOptions { IgnoreInaccessible = true, RecurseSubdirectories = true});
