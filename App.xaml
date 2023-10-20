@@ -3,11 +3,19 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:File_Analyzer"
              xmlns:icon="http://metro.mahapps.com/winfx/xaml/iconpacks"
+             xmlns:viewmodels="clr-namespace:File_Analyzer.ViewModels"
+             xmlns:views="clr-namespace:File_Analyzer.Views"
              StartupUri="MainWindow.xaml"
              xmlns:theme="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero2">
     
     <Application.Resources>
-        
+        <DataTemplate DataType="{x:Type viewmodels:SelectedFolderViewModel}">
+            <views:SelectedFolderView/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewmodels:MainViewModel}">
+            <views:MainView/>
+        </DataTemplate>
+
         <Style x:Key="selectButton" TargetType="ToggleButton">
             <Setter Property="Background" Value="#bfcde0"/>
             <Setter Property="Foreground" Value="#3B3355"/>

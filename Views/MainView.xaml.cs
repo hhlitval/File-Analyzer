@@ -54,7 +54,7 @@ namespace File_Analyzer.Views
                 //string selectedFolder = pathTextBox.Text = folderBrowserDialog.SelectedPath;
                 string selectedFolder = folderBrowserDialog.SelectedPath;
                 SelectedFolderViewModel getDirectoryFiles = new(selectedFolder);
-                DataContext = getDirectoryFiles;
+                DataContext = new SelectedFolderViewModel(selectedFolder);
             }            
         }        
     }

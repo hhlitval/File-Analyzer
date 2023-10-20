@@ -16,18 +16,16 @@
         <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width ="175"/>
-                <ColumnDefinition Width="2*"/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
-                <RowDefinition Height="60" />
-                <RowDefinition Height="80" />
+                <RowDefinition Height="40" />
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
 
             <!-- Window control section -->
             <!-- Background="#31393c" -->
-            <Border Grid.Row="0" Grid.RowSpan="3" Margin="5 5 0 5" CornerRadius="15" 
+            <Border Grid.Row="0" Grid.RowSpan="3" Margin="5 5 0 5" CornerRadius="15 0 0 15" 
                     Background="#bfcde0"/>
             <Border CornerRadius="15" Margin="5" Grid.Column="1" Grid.ColumnSpan="2" Grid.RowSpan="3" 
                     Background="#fefcfd"/>
@@ -45,19 +43,15 @@
                 </Button>
             </StackPanel>
             
-            <!-- Title -->
-            <TextBlock Grid.Row="0" Grid.RowSpan="2" Grid.Column="0"
-                       Text="File Analyzer" TextWrapping="Wrap" HorizontalAlignment="Center"
-                       VerticalAlignment="Center"
-                       FontSize="30"
-                       Margin="10"
-                       TextAlignment="Center"
-                       Foreground="#3B3355"
-                       FontFamily="Berlin Sans FB"/>
-            
             <!-- Side Menu Panel  -->
-            <StackPanel Grid.Row="2" Grid.Column="0" Orientation="Vertical">
-               
+            <StackPanel Grid.RowSpan="2" Grid.Column="0" Orientation="Vertical">
+                <TextBlock Text="File Analyzer" TextWrapping="Wrap" HorizontalAlignment="Center"
+                           VerticalAlignment="Center"
+                           FontSize="30"
+                           Margin="10 30 10 30"
+                           TextAlignment="Center"
+                           Foreground="#3B3355"
+                           FontFamily="Berlin Sans FB"/>
                 <ToggleButton Style="{StaticResource selectButton}"
                               Background="#000505" Foreground="#fefcfd"
                               Click="SelectFolderButton_Click">
@@ -141,7 +135,8 @@
                 </ToggleButton>
             </StackPanel>
 
-            <!-- Data Grid -->
+            <ContentControl Grid.Column="1" Grid.Row="1" Content="{Binding SelectedFolderViewModel}"/>
+            <!-- Data Grid --><!--
             <DataGrid Grid.Row="2" Grid.Column="1" ItemsSource="{Binding FileItems}" 
                       Margin="15 0 15 15"
                       CellStyle="{DynamicResource DataGridCellStyle1}" Style="{DynamicResource DataGridStyle1}" 
@@ -174,7 +169,7 @@
                 </DataGrid.Columns>
             </DataGrid>
             
-            <!-- PieChart Files -->
+            --><!-- PieChart Files --><!--
             <Grid Grid.Row="2" Grid.Column="2">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="50"/>
@@ -185,7 +180,7 @@
                 <TextBlock Text="File Types" FontSize="18" FontWeight="Normal" Foreground="#69717d"/>
                 <lvc:PieChart Grid.Row="1" Series="{Binding Series}" Margin="10" LegendPosition="Right"/>
                 
-            </Grid>
+            </Grid>-->
         </Grid>
     </Border>
 </Window>
